@@ -1,8 +1,14 @@
-<h1>My Cool App</h1>
-<a routerLink="/">Home</a>
-<a routerLink="/products">Products</a>
-<router-outlet></router-outlet>
-<button mat-raised-button color="warn">
-  <mat-icon>home</mat-icon>
-  Click Me!
-</button>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    <!--<button (click)="sidenav.toggle()">Show Sidenav</button>-->
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
