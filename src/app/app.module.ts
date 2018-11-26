@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ProductsComponent} from './products/products.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ProductComponent} from './product/product.component';
 import {ProductsService} from './services/products.service';
 import {HomeComponent} from './home/home.component';
@@ -21,6 +21,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {HeaderComponent} from './navigation/header/header.component';
 import {SidenavListComponent} from './navigation/sidenav-list/sidenav-list.component';
 import {StopTrainingComponent} from './training/stop-training/stop-training.component';
+import {AuthService} from './auth/auth.service';
+import {TrainingService} from './training/training.service';
 
 @NgModule({
   declarations: [
@@ -43,11 +45,12 @@ import {StopTrainingComponent} from './training/stop-training/stop-training.comp
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule
   ],
-  providers: [ProductsService],
+  providers: [ProductsService, AuthService, TrainingService],
   bootstrap: [AppComponent],
   entryComponents: [StopTrainingComponent]
 })
