@@ -7,7 +7,7 @@
       <mat-card-content fxLayoutAlign="center">
         <mat-form-field>
           <mat-select placeholder="Choose Exercise" ngModel name="exercise" required>
-            <mat-option *ngFor="let op of exercises | async" [value]="op.id">{{op.name}}</mat-option>
+            <mat-option *ngFor="let op of exercises" [value]="op.id">{{op.name}}</mat-option>
             <!--<mat-option value = "crunches">-->
             <!--Crunches-->
             <!--</mat-option>-->
