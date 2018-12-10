@@ -14,7 +14,9 @@ export class SignupComponent implements OnInit, OnDestroy {
   maxDate;
   private isLoading = false;
   private loadSubs: Subscription;
-  constructor(private authService: AuthService, private uiService: UIService) { }
+
+  constructor(private authService: AuthService, private uiService: UIService) {
+  }
 
   ngOnInit() {
     this.loadSubs = this.uiService.loadingStateChange.subscribe(isLoading => {
@@ -33,7 +35,9 @@ export class SignupComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.loadSubs.unsubscribe();
+    if (this.loadSubs) {
+      this.loadSubs.unsubscribe();
+    }
   }
 
 }
